@@ -4,7 +4,7 @@
 </head>
 <body>
 
-    <form>
+    <form action="register.php" method="POST">
         <input type="text" name="reg_fname" placeholder="First Name" required>
         <br>
         <input type="text" name="reg_lname" placeholder="Last Name" required>
