@@ -6,14 +6,14 @@
     }  
   //Declaring variables to prevent errors
   $fname = ""; //First name
-  $lname = "" //last name
+  $lname = ""; //last name
   $em = ""; //email
   $em2 = ""; //email2
   $password = ""; //password
   $password2 = "";//password2
   $date = ""; //sign up date
   $error_array = ""; //holds error messages
- if(isset($ POST['register_button'])){
+ if(isset($POST['register_button'])){
      //registration form values
      $fname = strip_tags($_POST['reg_fname']); //strip_tags security measures such as <a> name <a>
      $fname = str_replace(' ', '', $fname); //remove spaces
