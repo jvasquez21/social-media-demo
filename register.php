@@ -17,6 +17,7 @@
         <br>
         <input type="password" name="reg_password2" placeholder="Confirm Password" required>
         <br>
+        <input type="submit" name="register_button" value="Register">
 
     </form>
 
