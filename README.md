@@ -1,2 +1,2 @@
 # social-media-demo
-Creating a social media website
+Learning to create a social media website by using online resources.

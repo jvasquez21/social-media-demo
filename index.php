@@ -1,19 +1,14 @@
 <?php
-$con = mysqli_connect("localhost", "root", "", "social"); // Connection variable
+require 'config/config.php';
 
-if(mysqli_connect_errno()){
-	echo "Failed to connect: " . mysqli_connect_errno(); // . (dot) add to the string
-}
-
-$query = mysqli_query($con, "INSERT INTO test VALUES ('1', 'Zelda')");
-
+$query = mysqli_query($connect, "INSERT INTO UserLoginInfo VALUES ('1', 'Navi')");  // Insert a value into a table
+                                                                                    // From our database
 ?>
-
 <html>
 <head>
-	<title>system newsfeed</title>
+  <title> Website - Website</title> <!--Appears in the tabs of a web page-->
 </head>
-<body>
-	Hello Systems!
+<body> <!--Website Content goes here-->
+  Immerse yourself in web development.
 </body>
 </html>
