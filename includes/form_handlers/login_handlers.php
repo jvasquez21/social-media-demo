@@ -1,28 +1,33 @@
 <?php
-  if(isset($_POST['login_button'])) {
-    // checks if the email is in correct format
-    $email = filter_var($_POST['log_email'], FILTER_SANITIZE_EMAIL);
-    $_SESSION['log_email'] = $email; // Store email into the session
 
-    $passwd = md5($_POST['log_passwd']); //get password
+if(isset($_POST['login_button'])) {
 
-    $check_database = mysqli_query($connect, "SELECT * FROM user WHERE email='$email' AND password='$passwd'");
-    $check_login = mysqli_num_rows($check_database);
+	$email = filter_var($_POST['log_email'], FILTER_SANITIZE_EMAIL); //sanitize email
 
-    if ($check_login == 1) {
-      $row = mysqli_fetch_array($check_database);
-      $username = $row['$username'];
+	$_SESSION['log_email'] = $email; //Store email into session variable
+	$password = md5($_POST['log_passwd']); //Get password
 
-      $user_closed = mysqli_query($connect, "SELECT * FROM user WHERE EMAIL='$email' AND user_closed='yes'");
-      if (mysqli_num_rows($user_closed) == 1) {
-        $reopen_acct = mysqli_query($connect, "UPDATE user SET user_closed='no' WHERE email='$email'");
-      }
-      $_SESSION['username'] = $username;
+	$check_database_query = mysqli_query($connect, "SELECT * FROM user WHERE email='$email' AND password='$password'");
+	$check_login_query = mysqli_num_rows($check_database_query);
 
-      header("Location: index.php");
-      exit();
-    }else {
-      array_push($error_array, "Incorrect Email or Password<br>");
-    }
-  }
+	if($check_login_query == 1) {
+		$row = mysqli_fetch_array($check_database_query);
+		$username = $row['username'];
+
+		$user_closed_query = mysqli_query($connect, "SELECT * FROM user WHERE email='$email' AND user_closed='yes'");
+		if(mysqli_num_rows($user_closed_query) == 1) {
+			$reopen_account = mysqli_query($connect, "UPDATE user SET user_closed='no' WHERE email='$email'");
+		}
+
+		$_SESSION['username'] = $username;
+		header("Location: index.php");
+		exit();
+	}
+	else {
+		array_push($error_array, "Email or password was incorrect<br>");
+	}
+
+
+}
+
 ?>

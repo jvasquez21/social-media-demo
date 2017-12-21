@@ -1,11 +1,10 @@
-@@font-face {
-  font-family: 'Bellota-LightItalic';
-  src: url("../fonts/bellota/Bellota-LightItalic.oft")
+@font-face {
+	font-family: 'Bellota-LightItalic';
+	src: url('../fonts/Bellota-LightItalic.otf');
 }
-
-@@font-face {
-  font-family: 'Bellota-BoldItalic';
-  src: url("../fonts/bellota/Bellota-BoldItalic.oft")
+@font-face {
+	font-family: 'Bellota-BoldItalic';
+	src: url('../fonts/Bellota-BoldItalic.otf');
 }
 
 html, body {
@@ -74,7 +73,7 @@ input[type="submit"] {
   background-color: #3498db;
   border: 1px solid #3498db;
   border-radius: 3px;
-  margin: 5px 0px 5px 0px;
+  margin: 5px 0px 10px 0px;
   padding: 5px 10px 5px 10px;
   color: #2C6C96;
   text-shadow: #73B6E2 0.5px 0.5px 0px;
